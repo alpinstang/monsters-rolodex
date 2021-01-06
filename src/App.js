@@ -26,7 +26,10 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <SearchBar placeholderText="Search Monsters..." handleChange={e => this.setState({searchField: e.target.value})} />
+        <SearchBar
+          placeholderText="Search Monsters..."
+          handleChange={(e) => this.setState({ searchField: e.target.value })}
+        />
         <CardList name="Card List Component" monsters={filteredMonsters} />
       </div>
     );
