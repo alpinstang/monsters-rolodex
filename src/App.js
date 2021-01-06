@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {CardList} from './components/card-list/card-list.component.jsx';
+import { SearchBar } from './components/search-bar/search-bar.component';
 
 class App extends Component {
 constructor() {
@@ -20,6 +21,7 @@ componentDidMount() {
   render() {
     return (
       <div className="App">
+        <SearchBar />
         <CardList name="Card List Component" monsters={this.state.monsters} />        
       </div>
     );
