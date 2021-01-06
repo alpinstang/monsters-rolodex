@@ -11,6 +11,9 @@ class App extends Component {
       monsters: [],
       searchField: '',
     };
+
+    // Define context of functions here so we can access 'this'
+    // alternatively, use arrow functions to avoid cluttering constructor
   }
 
   componentDidMount() {
@@ -19,6 +22,12 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users }));
   }
 
+  // the arrow function allows for lexiccal scoping,
+  // removing need to bind 'this' in cnnstructor
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value });
+  };
+
   render() {
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter((monster) =>
@@ -26,9 +35,10 @@ class App extends Component {
     );
     return (
       <div className="App">
+      <h1>Monsters Rolodex</h1>
         <SearchBar
           placeholderText="Search Monsters..."
-          handleChange={(e) => this.setState({ searchField: e.target.value })}
+          handleChange={(e) => this.handleChange(e)}
         />
         <CardList name="Card List Component" monsters={filteredMonsters} />
       </div>
