@@ -20,4 +20,6 @@
   object-fit: contain;
 }
 
-img { widthL 100%; }
+img {
+  width: 100%;
+}
