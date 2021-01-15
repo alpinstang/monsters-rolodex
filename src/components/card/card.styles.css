@@ -19,3 +19,5 @@
 .monster-image {
   object-fit: contain;
 }
+
+img { widthL 100%; }
