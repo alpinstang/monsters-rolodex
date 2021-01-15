@@ -16,6 +16,10 @@
   transform: scale(1.05);
 }
 
+.monster-image {
+  object-fit: contain;
+}
+
 img {
   width: 100%;
 }
